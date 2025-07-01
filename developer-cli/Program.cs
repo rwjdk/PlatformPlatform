@@ -1,5 +1,9 @@
-﻿using System.CommandLine;
+using System.CommandLine;
 using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using ModelContextProtocol.Server;
+using PlatformPlatform.DeveloperCli.Commands;
 using PlatformPlatform.DeveloperCli.Installation;
 using Spectre.Console;
 
@@ -15,6 +19,26 @@ if (!Configuration.IsMacOs && !Configuration.IsWindows && !Configuration.IsLinux
 if (args.Length == 0)
 {
     args = ["--help"];
+}
+
+if (args[0] == "mcp")
+{
+    var builder = Host.CreateApplicationBuilder();
+
+    builder.Services
+        .AddMcpServer()
+        .WithStdioServerTransport()
+        .WithTools([
+                McpServerTool.Create(Hello, new McpServerToolCreateOptions
+                    {
+                        Name = "Rebuild-Backend",
+                        Description = "Rebuild the backend of PlatformPlatform"
+                    }
+                )
+            ]
+        );
+
+    builder.Build().Run();
 }
 
 var solutionName = new DirectoryInfo(Configuration.SourceCodeFolder).Name;
@@ -46,3 +70,9 @@ if (!isDebugBuild)
 allCommands.ForEach(rootCommand.AddCommand);
 
 await rootCommand.InvokeAsync(args);
+
+static string Hello(bool backend, bool frontend)
+{
+    BuildCommand.Execute(backend, frontend, null);
+    return "Backend Built";
+}

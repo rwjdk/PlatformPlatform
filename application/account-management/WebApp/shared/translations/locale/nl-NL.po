@@ -158,9 +158,6 @@ msgstr "Gegevens ophalen..."
 msgid "First name"
 msgstr "Voornaam"
 
-msgid "Help"
-msgstr "Help"
-
 msgid "Here's your overview of what's happening."
 msgstr "Hier is je overzicht van wat er gebeurt."
 
