@@ -1,9 +1,8 @@
 import { HeroImage } from "@/shared/components/HeroImage";
 import { t } from "@lingui/core/macro";
 import { LocaleSwitcher } from "@repo/infrastructure/translations/LocaleSwitcher";
-import { Button } from "@repo/ui/components/Button";
 import { ThemeModeSelector } from "@repo/ui/theme/ThemeModeSelector";
-import { LifeBuoyIcon } from "lucide-react";
+import { SupportPanelButton } from "@repo/ui/components/SupportPanelButton";
 import type { ReactNode } from "react";
 
 interface HorizontalHeroLayoutProps {
@@ -15,9 +14,7 @@ export function HorizontalHeroLayout({ children }: Readonly<HorizontalHeroLayout
     <main className="relative flex min-h-screen flex-col">
       <div className="absolute top-4 right-4 hidden gap-4 rounded-md bg-white p-2 shadow-md sm:flex dark:bg-gray-800">
         <ThemeModeSelector aria-label={t`Toggle theme`} />
-        <Button variant="icon" aria-label={t`Help`}>
-          <LifeBuoyIcon size={20} />
-        </Button>
+        <SupportPanelButton />
         <LocaleSwitcher aria-label={t`Select language`} />
       </div>
       <div className="flex grow flex-col gap-4 md:flex-row">
