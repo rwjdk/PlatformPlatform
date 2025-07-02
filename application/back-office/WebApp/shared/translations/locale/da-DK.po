@@ -16,9 +16,6 @@ msgstr ""
 msgid "Account management"
 msgstr "Kontoadministration"
 
-msgid "Help"
-msgstr "Hjælp"
-
 msgid "Home"
 msgstr "Hjem"
 

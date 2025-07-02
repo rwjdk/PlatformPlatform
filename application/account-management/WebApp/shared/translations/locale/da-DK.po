@@ -158,9 +158,6 @@ msgstr "Henter data..."
 msgid "First name"
 msgstr "Fornavn"
 
-msgid "Help"
-msgstr "Hjælp"
-
 msgid "Here's your overview of what's happening."
 msgstr "Her er din oversigt over, hvad der sker."
 

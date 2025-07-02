@@ -20,7 +20,7 @@ public class BuildCommand : Command
         Handler = CommandHandler.Create<bool, bool, string?>(Execute);
     }
 
-    private static void Execute(bool backend, bool frontend, string? solutionName)
+    public static void Execute(bool backend, bool frontend, string? solutionName)
     {
         Prerequisite.Ensure(Prerequisite.Dotnet, Prerequisite.Node);
 
