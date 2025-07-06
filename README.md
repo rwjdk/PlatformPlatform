@@ -29,6 +29,8 @@ You get all the best practices we’ve gathered over the years building top-tier
 > [!Caution]  
 > This project is still in alpha. Follow our [up-to-date roadmap](https://github.com/orgs/PlatformPlatform/projects/2/views/2) for further details.
 
+---
+
 ### What’s included?
 
 - **Backend** – .NET 9 and C# following the principles of vertical slice architecture, DDD, CQRS, and clean code  
